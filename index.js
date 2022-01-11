@@ -22,8 +22,8 @@ const createBookUi = ({ title, author, id }) => {
   newDiv.classList.add("content");
   container.appendChild(newDiv);
   return (newDiv.innerHTML += `
-        <h1>${title}</h1>
-        <h2>${author}</h2>
+        <h2 class="title">${title}</h2>
+        <h3 class="author">${author}</h3>
         <button class="remove" name=${id}>Remove</button>
         <div class="line"></div>
     `);
