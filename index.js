@@ -37,6 +37,7 @@ form.onsubmit = (e) => {
     .substring(1);
   const newBook = addBookToLocalStorage(id, bookTitle.value, bookAuthor.value);
   createBookUi(newBook);
+  location.reload();
   bookTitle.value = "";
   bookAuthor.value = "";
   id = "";
