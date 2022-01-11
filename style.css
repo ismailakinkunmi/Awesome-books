@@ -1,10 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .form {
+  margin: 15px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
   width: 150px;
 }
 
-button {
+.btn {
+  margin: 5px;
+  width: 25%;
+}
+
+input {
+  margin: 5px;
+}
+
+.remove {
   width: 50%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin: 15px;
+}
+
+.line {
+  margin-top: 10px;
+  border-bottom: 3px solid #333;
+  width: 200px;
 }
