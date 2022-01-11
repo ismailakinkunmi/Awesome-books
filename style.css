@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.btn {
+  margin: 5px;
+  width: 25%;
+}
+
+input {
+  margin: 5px;
+}
+
+.remove {
+  width: 50%;
+  margin-bottom: 28px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin: 8px;
+}
+
+.title {
+  margin-bottom: 28px;
+}
+
+.author {
+  margin-bottom: 28px;
+}
+
+.line {
+  margin-bottom: 28px;
+  border-bottom: 1px solid #333;
+  width: 200px;
+}
