@@ -6,7 +6,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   background-image: url(images/books.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -62,6 +62,7 @@ input {
   border: 3px solid #333;
   outline: none;
 }
+
 .delete {
   font-weight: bold;
   cursor: pointer;
