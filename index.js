@@ -1,56 +1,84 @@
-const form = document.getElementById("myForm");
-const container = document.getElementById("container");
-const bookTitle = document.getElementById("title");
-const bookAuthor = document.getElementById("author");
-const books = JSON.parse(localStorage.getItem("books")) || [];
+/* eslint-disable max-classes-per-file */
 
-const addBookToLocalStorage = (id, title, author) => {
-  if (title && author) {
-    books.push({
-      id,
-      title,
-      author,
-    });
-    localStorage.setItem("books", JSON.stringify(books));
-    return { id, title, author };
+class Book {
+  constructor(title, author) {
+    this.title = title.value;
+    this.author = author.value;
   }
-  return null;
-};
+}
 
-const createBookUi = ({ title, author, id }) => {
-  const newDiv = document.createElement("div");
-  newDiv.classList.add("content");
-  container.appendChild(newDiv);
-  newDiv.innerHTML += `
-        <h2 class="title">${title}</h2>
-        <h3 class="author">${author}</h3>
-        <button class="remove" name=${id}>Remove</button>
-    `;
-};
+class LocalStoragConfig {
+  static getBookFromStorage() {
+    let books;
+    if (localStorage.getItem("books") === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem("books"));
+    }
+    return books;
+  }
 
-books.forEach(createBookUi);
-form.onsubmit = (e) => {
+  static AddBook(book) {
+    const books = LocalStoragConfig.getBookFromStorage();
+    books.push(book);
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+
+  static RemoveStoring(title) {
+    const books = LocalStoragConfig.getBookFromStorage();
+    const filteredArray = books.filter((book) => book.title !== title);
+    localStorage.setItem("books", JSON.stringify(filteredArray));
+  }
+}
+
+class BookElements {
+  static BookElement(book) {
+    const bookContainer = document.querySelector(".book-container");
+    const listContainer = document.createElement("div");
+    listContainer.className = "list-Container";
+    listContainer.innerHTML += `
+            <p class="text">"${book.title}" by ${book.author}</p>
+            <button class='delete'>Remove</button>
+            `;
+
+    bookContainer.appendChild(listContainer);
+  }
+}
+
+class Display {
+  static displayBooksFromStorage() {
+    const books = LocalStoragConfig.getBookFromStorage();
+    books.forEach((book) => BookElements.BookElement(book));
+  }
+
+  static removeBook(target) {
+    if (target.classList.contains("delete")) {
+      target.parentElement.remove();
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", Display.displayBooksFromStorage);
+document.querySelector("#form").addEventListener("submit", (e) => {
   e.preventDefault();
-  let id = Math.floor((1 + Math.random()) * 0x1000)
-    .toString(16)
-    .substring(1);
-  const newBook = addBookToLocalStorage(id, bookTitle.value, bookAuthor.value);
-  createBookUi(newBook);
-  window.location.reload();
-  bookTitle.value = "";
-  bookAuthor.value = "";
-  id = "";
-};
 
-const deleteBook = (id) => {
-  const newBooks = books.filter((book) => book.id !== id);
-  window.location.reload();
-  return localStorage.setItem("books", JSON.stringify(newBooks));
-};
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
 
-document.querySelectorAll(".remove").forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    deleteBook(e.target.name);
-  });
+  const book = new Book(title, author);
+
+  LocalStoragConfig.AddBook(book);
+
+  BookElements.BookElement(book);
+
+  const form = document.querySelector("#form");
+  form.reset();
+});
+
+document.querySelector(".book-container").addEventListener("click", (e) => {
+  Display.removeBook(e.target);
+
+  LocalStoragConfig.RemoveStoring(
+    e.target.parentElement.firstElementChild.textContent
+  );
 });

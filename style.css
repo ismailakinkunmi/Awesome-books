@@ -44,12 +44,13 @@ body {
 
 .btn {
   align-self: flex-end;
-  padding: 5px 12px;
   font-size: large;
   font-weight: bold;
   border: 3px solid #333;
   border-radius: 8px;
   cursor: pointer;
+  width: 25%;
+  height: 35px;
 }
 
 input {
@@ -57,11 +58,17 @@ input {
   width: 400px;
   height: 30px;
   font-size: large;
+  font-weight: bold;
+  border: 3px solid #333;
+  outline: none;
+}
+.delete {
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.remove {
-  width: 50%;
-  margin-bottom: 28px;
+.book-list {
+  width: 250px;
 }
 
 .content {
@@ -72,6 +79,12 @@ input {
   height: 200px;
   background-color: #fff;
   margin: 8px;
+}
+
+.text {
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
 }
 
 .title {

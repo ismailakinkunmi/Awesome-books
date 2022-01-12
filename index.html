@@ -15,14 +15,18 @@
     <div class="transparent">
       <div class="main">
         <h1 class="heading">All Awesome Books</h1>
+        <div class="book-container"></div>
         <div id="container"></div>
         <div class="line"></div>
         <h2 class="heading">Add a new book</h2>
-        <form class="form" id="myForm">
-          <input id="title" name="title" type="text" placeholder="Title" />
-          <input id="author" name="author" type="text" placeholder="Author" />
-          <button id="btn" class="btn" type="submit">Add</button>
-        </form>
+        <form id="form" class="form">
+          <label for="title"></label>
+          <input type="text" id="title" placeholder="Title">
+          <label for="author"></label> <br> 
+          <input type="text" id="author" placeholder="Author"> <br>
+          <input class="btn" type="submit" value="Add" id="submit">
+      </form>
+      </div>
       </div>
     </div>
     <script src="index.js"></script>
