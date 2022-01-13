@@ -1,12 +1,14 @@
 # Awesome books website.
 
 # Awesome books website.
-![Screenshot (66)](https://user-images.githubusercontent.com/37457094/149290724-ed605730-117b-4e62-9f95-d628f83a03ab.png)
+
+![Screenshot](images\screenshot.png)
+
 ## Setup
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the repository to your computer using git clone [Git Clone Url](git@github.com:ismailakinkunmi/Awesome-books.git)
+- Clone the repository to your computer using git clone [Git Clone Url](https://github.com/ismailakinkunmi/Awesome-books.git)
 - Cd into the folder
 - Open index.html with live server
 - Or you can Fork it instead, and create a pull request to suggest some changes
