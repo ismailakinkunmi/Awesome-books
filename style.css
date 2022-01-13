@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-image: url(images/books.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -66,6 +70,7 @@ input {
 .delete {
   font-weight: bold;
   cursor: pointer;
+  margin: 2px;
 }
 
 .book-list {
@@ -100,4 +105,10 @@ input {
   margin: 18px;
   border-bottom: 4px solid #fff;
   width: 200px;
+}
+
+.list-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
