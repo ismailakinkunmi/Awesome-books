@@ -1,14 +1,12 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Awesome books website.
 
-### Awesome books website.
+![Screenshot](images/screenshot.png)
 
-![screenshot](images/screenshot.png)
-
-### Setup
+## Setup
 
 To get a local copy up and running follow these simple example steps.
 
-- Clone the repository to your computer using git clone [Git Clone Url](https://github.com/abdulrahmanshr75/Awesome-books.git)
+- Clone the repository to your computer using git clone [Git Clone Url](https://github.com/ismailakinkunmi/Awesome-books.git)
 - Cd into the folder
 - Open index.html with live server
 - Or you can Fork it instead, and create a pull request to suggest some changes
@@ -22,7 +20,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-[Live Demo](https://abdulrahmanshr75.github.io/Awesome-books/)
+[Live Demo](https://ismailakinkunmi.github.io/Awesome-books/)
 
 ## Built With
 

@@ -1,28 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background-image: url(images/books.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.transparent {
+  background-color: rgba(51, 51, 51, 0.77);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading {
+  margin-bottom: 25px;
+  color: #fff;
 }
 
 .form {
   margin: 8px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  width: 150px;
+  width: 410px;
 }
 
 .btn {
-  margin: 5px;
+  align-self: flex-end;
+  font-size: large;
+  font-weight: bold;
+  border: 3px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
   width: 25%;
+  height: 35px;
 }
 
 input {
   margin: 5px;
+  width: 400px;
+  height: 30px;
+  font-size: large;
+  font-weight: bold;
+  border: 3px solid #333;
+  outline: none;
 }
 
-.remove {
-  width: 50%;
-  margin-bottom: 28px;
+.delete {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.book-list {
+  width: 250px;
 }
 
 .content {
@@ -35,6 +88,13 @@ input {
   margin: 8px;
 }
 
+.text {
+  color: #fff;
+  font-size: large;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
 .title {
   margin-bottom: 28px;
 }
@@ -44,7 +104,15 @@ input {
 }
 
 .line {
-  margin-bottom: 28px;
-  border-bottom: 1px solid #333;
+  margin: 18px;
+  border-bottom: 4px solid #fff;
   width: 200px;
+}
+
+.list-Container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;
 }
