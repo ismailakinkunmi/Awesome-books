@@ -1,84 +1,79 @@
-/* eslint-disable max-classes-per-file */
+const title = document.getElementById("title");
+const author = document.getElementById("author");
 
 class Book {
   constructor(title, author) {
+    this.id = Math.floor(Math.random() * 10000)
+      .toString()
+      .substring();
     this.title = title.value;
     this.author = author.value;
   }
-}
 
-class LocalStoragConfig {
-  static getBookFromStorage() {
+  static displayBookOnUi(book) {
+    const booksContainer = document.getElementById("container");
+    const listContainer = document.createElement("div");
+    listContainer.className = "list-Container";
+    listContainer.innerHTML += `
+            <p class="text">"${book.title}" by ${book.author}</p>
+            <button class='delete' id=${book.id}>Remove</button>
+            `;
+    booksContainer.appendChild(listContainer);
+  }
+
+  static getBooksFromLocalStorage() {
     let books;
-    if (localStorage.getItem('books') === null) {
+    if (!localStorage.getItem("books")) {
       books = [];
     } else {
-      books = JSON.parse(localStorage.getItem('books'));
+      books = JSON.parse(localStorage.getItem("books"));
     }
     return books;
   }
 
-  static AddBook(book) {
-    const books = LocalStoragConfig.getBookFromStorage();
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
+  static displayBooks() {
+    const displayList = Book.getBooksFromLocalStorage();
+    displayList.forEach((book) => Book.displayBookOnUi(book));
   }
 
-  static RemoveStoring(title) {
-    const books = LocalStoragConfig.getBookFromStorage();
-    const filteredArray = books.filter((book) => book.title !== title);
-    localStorage.setItem('books', JSON.stringify(filteredArray));
-  }
-}
-
-class BookElements {
-  static BookElement(book) {
-    const bookContainer = document.querySelector('.book-container');
-    const listContainer = document.createElement('div');
-    listContainer.className = 'list-Container';
-    listContainer.innerHTML += `
-            <p class="text">"${book.title}" by ${book.author}</p>
-            <button class='delete'>Remove</button>
-            `;
-
-    bookContainer.appendChild(listContainer);
-  }
-}
-
-class Display {
-  static displayBooksFromStorage() {
-    const books = LocalStoragConfig.getBookFromStorage();
-    books.forEach((book) => BookElements.BookElement(book));
+  static addBooksToLocalStorage(book) {
+    const newlist = Book.getBooksFromLocalStorage();
+    newlist.push(book);
+    localStorage.setItem("books", JSON.stringify(newlist));
   }
 
-  static removeBook(target) {
-    if (target.classList.contains('delete')) {
-      target.parentElement.remove();
+  static removeBooksFromLocalStorage(bookId) {
+    const newList = Book.getBooksFromLocalStorage();
+    newList.forEach((item, index) => {
+      if (item.id === bookId) {
+        newList.splice(index, 1);
+      }
+    });
+    localStorage.setItem("books", JSON.stringify(newList));
+  }
+
+  static removeBookUi(book) {
+    if (book.classList.contains("delete")) {
+      book.parentElement.remove();
     }
   }
 }
 
-document.addEventListener('DOMContentLoaded', Display.displayBooksFromStorage);
-document.querySelector('#form').addEventListener('submit', (e) => {
+document.addEventListener("DOMContentLoaded", Book.displayBooks());
+
+document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const title = document.getElementById('title');
-  const author = document.getElementById('author');
-
-  const book = new Book(title, author);
-
-  LocalStoragConfig.AddBook(book);
-
-  BookElements.BookElement(book);
-
-  const form = document.querySelector('#form');
-  form.reset();
+  if (title === "" || author === "") {
+    return;
+  } else {
+    const book = new Book(title, author);
+    Book.displayBookOnUi(book);
+    Book.addBooksToLocalStorage(book);
+    form.reset();
+  }
 });
 
-document.querySelector('.book-container').addEventListener('click', (e) => {
-  Display.removeBook(e.target);
-
-  LocalStoragConfig.RemoveStoring(
-    e.target.parentElement.firstElementChild.textContent,
-  );
+document.querySelector("#container").addEventListener("click", (e) => {
+  Book.removeBookUi(e.target);
+  Book.removeBooksFromLocalStorage(e.target.id);
 });
