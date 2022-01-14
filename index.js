@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 const form = document.getElementById('form');
@@ -78,3 +79,21 @@ document.querySelector('#container').addEventListener('click', (e) => {
   Book.removeBookUi(e.target);
   Book.removeBooksFromLocalStorage(e.target.id);
 });
+
+class DisplayThePage {
+  static navigationBar(e) {
+    e.preventDefault();
+    const thePage = e.target.getAttribute('data-target');
+    document.querySelector('.display').classList.remove('display');
+    document.getElementById(thePage).classList.add('display');
+  }
+
+  static pageView() {
+    const navItems = document.querySelectorAll('.nav-link');
+    navItems.forEach((item) => {
+      item.addEventListener('click', DisplayThePage.navigationBar);
+    });
+  }
+}
+document.addEventListener('DOMContentLoaded', DisplayThePage.pageView);
+document.getElementById('time').innerHTML = Date();

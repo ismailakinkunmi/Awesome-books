@@ -12,21 +12,48 @@
     <title>Awesome Books</title>
   </head>
   <body>
+    <header>
+      <h2 class="logo">Awesome Books</h2>
+      <nav class="navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" data-target="list">List</a></li>
+          <li><a class="nav-link" data-target="addNew">Add New</a></li>
+          <li><a class="nav-link" data-target="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <span id="time"></span>
     <div class="transparent">
       <div class="main">
-        <h1 class="heading">All Awesome Books</h1>
-        <div id="container"></div>
-        <div class="line"></div>
-        <h2 class="heading">Add a new book</h2>
-        <form id="form" class="form">
-          <label for="title"></label>
-          <input type="text" id="title" placeholder="Title" />
-          <label for="author"></label> <br />
-          <input type="text" id="author" placeholder="Author" /> <br />
-          <input class="btn" type="submit" value="Add" id="submit" />
-        </form>
+        <section class="section display" id="list">
+          <h1 class="heading">All Awesome Books</h1>
+          <div id="container"></div>
+        </section>
+        <section class="section" id="addNew">
+          <h2 class="heading">Add a new book</h2>
+          <form id="form" class="form">
+            <label for="title"></label>
+            <input type="text" id="title" placeholder="Title" />
+            <label for="author"></label> <br />
+            <input type="text" id="author" placeholder="Author" /> <br />
+            <input class="btn" type="submit" value="Add" id="submit" />
+          </form>
+        </section>
+        <section class="section" id="contact">
+          <h2 class="heading">Contact Information</h2>
+          <p class="text">
+            Do have any questions or just wamt to say "Hello" ?
+          </p>
+          <p class="text">You can reach out to us!</p>
+          <p class="text margin">- Our e-mail : mail@mail.com</p>
+          <p class="text">- Our phone number : 00962482..</p>
+          <p class="text">- Our address streetname 22, 84503 city, country.</p>
+        </section>
       </div>
     </div>
+    <footer class="footer">
+      <p class="f-text">Made by Abdulrahman and Ismail - Copyright @ 2022</p>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
