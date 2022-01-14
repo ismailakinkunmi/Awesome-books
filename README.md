@@ -1,5 +1,7 @@
 # Awesome books website
 
+![screenshot](images/screenshot.png)
+
 ## Setup
 
 To get a local copy up and running follow these simple example steps.
