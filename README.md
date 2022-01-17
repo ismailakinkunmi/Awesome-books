@@ -1,6 +1,6 @@
-# Awesome books website.
+# Awesome books website
 
-![Screenshot](images/screenshot.png)
+![screenshot](images/screenshot.png)
 
 ## Setup
 
