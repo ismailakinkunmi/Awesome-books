@@ -38,7 +38,7 @@ This site was built using[Github Pages](https://ismailakinkunmi.github.io/Awesom
 - GitHub: [Abdulrahman](https://github.com/abdulrahmanshr75)
 - GitHub: [ismail](https://github.com/ismailakinkunmi)
 - LinkedIn: [Abdulrahman](https://www.linkedin.com/in/abdulrahman-shrshar-721144161/)
-- LinkedIn: [ismail](https://www.linkedin.com/in/ismail-akinkunmi-adekunle-b810aa155/)
+- LinkedIn: [ismail](https://www.linkedin.com/in/adismail4/)
 
 ## Show your support
 
