@@ -18,23 +18,17 @@ To get a local copy up and running follow these simple example steps.
 - Run tests
 - Deployment
 
-## Live Demo
+## Link
 
-[Live Demo](https://ismailakinkunmi.github.io/Awesome-books/)
-
-## Built With
-
-- HTML
-- CSS
-- JavaScript
+This site was built using[Github Pages](https://ismailakinkunmi.github.io/Awesome-books/)
 
 ## technology used
 
 - Linters
 - VScode
-- html & css
+- HTML5 & CSS
 - Javascript
-- github
+- Github
 
 ## Authors
 
